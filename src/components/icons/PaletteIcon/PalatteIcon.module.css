@@ -1,0 +1,37 @@
+.palette-icon {
+  position: relative;
+}
+
+.palette {
+  position: absolute;
+  bottom: 15px;
+  left: 22px;
+  display: grid;
+  grid-template-columns: 30px 30px 30px;
+  grid-template-rows: 30px 30px;
+  gap: 5px;
+  background-color: var(--secondary-color);
+  padding: 10px;
+  border-radius: 5px;
+  cursor: auto;
+  opacity: 1;
+  -webkit-box-shadow: 3px 3px 6px -3px var(--grey),
+    -3px -3px 6px -3px var(--grey);
+  -moz-box-shadow: 3px 3px 6px -3px var(--grey),
+    -3px -3px 6px -3px var(--grey);
+  box-shadow: 3px 3px 6px -3px var(--grey),
+    -3px -3px 6px -3px var(--grey);
+}
+
+.hide-palette {
+  display: none;
+}
+
+.color {
+  border-radius: 50%;
+}
+
+.color:hover {
+  border: 2px solid var(--primary-color) !important;
+  border-radius: 50%;
+}

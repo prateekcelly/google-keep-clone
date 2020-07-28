@@ -1,0 +1,31 @@
+.header {
+  position: sticky;
+  left: 0;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  height: 50px;
+  background-color: var(--body-bg-color);
+  padding: 5px;
+  box-shadow: 0 2px 5px var(--grey);
+}
+
+.header input {
+  background-color: var(--searchbar-bg-color);
+  font-family: var(--ff-mont-regular);
+  width: 100%;
+  display: block;
+  width: 480px;
+  max-width: 50%;
+  margin: 5px auto;
+  height: 30px;
+  font-size: var(--fs-small);
+  padding: 0 16px;
+  border-radius: 5px;
+}
+
+.header input::placeholder {
+  color: var(--placeholder);
+  font-family: var(--ff-mont-semibold);
+  font-size: var(--fs-small);
+}

@@ -1,0 +1,23 @@
+.masonry-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px;
+  width: auto;
+}
+
+.masonry-grid-column {
+  margin: 5px;
+  background-clip: padding-box;
+}
+
+.zero-notes {
+  margin: 20px auto 0;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-mont-semibold);
+  font-size: 20px;
+  color: var(--placeholder);
+}

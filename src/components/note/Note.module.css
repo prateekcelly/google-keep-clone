@@ -1,0 +1,64 @@
+.note {
+  background: var(--note-bg-color);
+  border-radius: 10px;
+  box-shadow: 0 2px 2px var(--grey);
+  padding: 10px 15px;
+  margin: 10px 0;
+  overflow-wrap: break-word;
+  max-width: calc(100% / 1);
+}
+
+.note-information {
+  display: flex;
+  flex-direction: column;
+  max-height: 420px;
+}
+
+.note button {
+  fill: var(--primary-color);
+  background: none;
+  border: none;
+  font-size: var(--fs-xlarge);
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin: 0 4px 0 0;
+  outline: none;
+}
+
+.edit {
+  float: right;
+}
+
+.empty-note {
+  font-family: var(--ff-mont-regular);
+  color: var(--placeholder);
+  font-size: var(--fs-xlarge);
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.panel {
+  margin-top: 10px;
+}
+
+.note:hover,
+.note:focus {
+  cursor: pointer;
+}
+
+.note:hover button,
+.note:focus button {
+  opacity: 0.6;
+}
+
+.note button:hover,
+.note button:focus {
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .note-information {
+    max-height: 100%;
+  }
+}

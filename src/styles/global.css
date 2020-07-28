@@ -1,0 +1,97 @@
+input,
+textarea {
+  width: 100%;
+  display: block;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  color: var(--primary-color);
+}
+
+input::placeholder {
+  color: var(--placeholder);
+  font-family: var(--ff-mont-semibold);
+  font-size: var(--fs-base);
+}
+textarea::placeholder {
+  color: var(--placeholder);
+  font-family: var(--ff-mont-semibold);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+}
+
+input {
+  font-family: var(--ff-open-semibold);
+  font-weight: 700;
+  font-size: var(--fs-large);
+  margin-bottom: 10px;
+  height: inherit;
+  overflow: auto;
+  min-height: 2em;
+}
+
+textarea {
+  font-family: var(--ff-open-semibold);
+  resize: none;
+  height: inherit;
+  line-height: 1.5;
+  overflow: auto;
+  min-height: 1em;
+  max-height: 70vh;
+  scroll-behavior: smooth;
+  font-size: var(--fs-small);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.1em;
+  margin-bottom: 6px;
+  font-family: var(--ff-open-semibold);
+  flex: 0 1 auto;
+  overflow: hidden;
+  max-height: 100px;
+}
+
+p,
+pre {
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  font-family: var(--ff-open-semibold);
+  flex: 0 1 auto;
+  overflow: hidden;
+  max-height: 320px;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 0px;
+  background-color: var(--grey);
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (max-width: 500px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    max-height: 100%;
+  }
+
+  p,
+  pre {
+    max-height: 100%;
+  }
+}
