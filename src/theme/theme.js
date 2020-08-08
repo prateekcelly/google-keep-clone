@@ -1,12 +1,3 @@
-export const paletteColors = {
-  snowWhite: '#ffffff',
-  cheetosRed: '#f18b82',
-  skyBlue: '#aecbfa',
-  limeGreen: '#caf78f',
-  whitishGrey: '#e8eaed',
-  hotYellow: '#fff475',
-};
-
 export const lightTheme = {
   '--body-bg-color': '#f0f0f0',
   '--primary-color': '#000000',

@@ -8,7 +8,7 @@ import React, {
 import styles from './Create.module.css';
 import { FirebaseContext } from '../../firebase';
 import autoExpand from '../../utils';
-import { paletteColors } from '../../theme/theme';
+import ThemeContext from '../../theme';
 
 const INITIAL_STATE = { title: '', content: '' };
 
@@ -20,6 +20,7 @@ const Create = () => {
 
   const [titleFieldVisible, setTitleFieldVisible] = useState(false);
   const firebase = useContext(FirebaseContext);
+  const theme = useContext(ThemeContext);
   const formNode = useRef();
 
   useEffect(() => {
@@ -45,7 +46,11 @@ const Create = () => {
     const title = e.target.title.value;
     const content = e.target.content.value;
     if (title.trim() || content.trim()) {
-      firebase.createNote(title, content, paletteColors.snowWhite);
+      firebase.createNote(
+        title,
+        content,
+        theme.paletteColors['default'],
+      );
       setInput({ title: '', content: '' });
       autoExpand(e.target.title, true);
       autoExpand(e.target.content, true);

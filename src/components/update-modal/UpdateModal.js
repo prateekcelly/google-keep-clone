@@ -81,7 +81,9 @@ const UpdateModal = (props) => {
         <form
           className={styles['edit-note']}
           onSubmit={updateNote}
-          style={{ backgroundColor: theme.paletteColors[noteColor] }}
+          style={{
+            backgroundColor: theme.paletteColors[noteColor],
+          }}
         >
           <input
             id="transition-modal-title"

@@ -61,5 +61,8 @@ body {
   background-color: var(--body-bg-color);
   color: var(--primary-color);
   line-height: 1.5;
+  -webkit-transition: all 0.3 ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3 ease;
   transition: all 0.3s ease;
 }
