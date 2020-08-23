@@ -67,6 +67,7 @@ const Note = (props) => {
             paletteVisible={paletteVisible}
             showPalette={showPalette}
             hidePalette={hidePalette}
+            noteColor={noteColor}
           />
         </button>
         <button type="button" className={styles.edit}>

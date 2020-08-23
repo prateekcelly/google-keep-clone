@@ -129,6 +129,7 @@ const UpdateModal = (props) => {
                 paletteVisible={paletteVisible}
                 showPalette={showPalette}
                 hidePalette={hidePalette}
+                noteColor={noteColor}
               />
             </button>
             <button type="submit">Done</button>
