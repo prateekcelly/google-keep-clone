@@ -1,7 +1,7 @@
 .edit-note {
   position: relative;
   width: 640px;
-  max-width: 100%;
+  max-width: 90%;
   background: var(--note-bg-color);
   padding: 15px;
   padding-bottom: 0;
@@ -52,6 +52,10 @@
 .panel {
   padding: 5px 0;
   box-shadow: 0px -2px 5px -5px rgba(0, 0, 0, 0.5);
+}
+
+.palette-button {
+  position: relative;
 }
 
 .modal {

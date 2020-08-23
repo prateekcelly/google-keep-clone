@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import EditIcon from '../icons/EditIcon';
-import PaletteIcon from '../icons/PaletteIcon/PaletteIcon';
+import PaletteIcon from '../icons/PaletteIcon';
+import Palette from '../palette/Palette';
 import styles from './Note.module.css';
 import { FirebaseContext } from '../../firebase';
 import ThemeContext from '../../theme';
@@ -9,6 +10,7 @@ const Note = (props) => {
   const firebase = useContext(FirebaseContext);
   const theme = useContext(ThemeContext);
   const [noteColor, setNoteColor] = useState(props.note.color);
+  const [paletteVisible, setPaletteVisible] = useState(false);
 
   useEffect(() => {
     setNoteColor(props.note.color);
@@ -28,6 +30,14 @@ const Note = (props) => {
     props.setModalOpen(true);
   }
 
+  function showPalette() {
+    setPaletteVisible(true);
+  }
+
+  function hidePalette() {
+    setPaletteVisible(false);
+  }
+
   return (
     <div
       className={styles.note}
@@ -43,10 +53,20 @@ const Note = (props) => {
         <div className={styles['empty-note']}>Empty Note</div>
       )}
       <div className={styles['panel']}>
-        <button type="button" onClick={(e) => e.stopPropagation()}>
+        <button
+          type="button"
+          onClick={(e) => e.stopPropagation()}
+          className={styles['palette-button']}
+        >
           <PaletteIcon
+            showPalette={showPalette}
+            hidePalette={hidePalette}
+          />
+          <Palette
             changeNoteColor={changeNoteColor}
-            note={props.note}
+            paletteVisible={paletteVisible}
+            showPalette={showPalette}
+            hidePalette={hidePalette}
           />
         </button>
         <button type="button" className={styles.edit}>

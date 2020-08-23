@@ -5,7 +5,8 @@ import React, {
   useState,
 } from 'react';
 import DeleteIcon from '../icons/DeleteIcon';
-import PaletteIcon from '../icons/PaletteIcon/PaletteIcon';
+import PaletteIcon from '../icons/PaletteIcon';
+import Palette from '../palette/Palette';
 import autoExpand from '../../utils';
 import { FirebaseContext } from '../../firebase';
 
@@ -18,6 +19,7 @@ import ThemeContext from '../../theme';
 const UpdateModal = (props) => {
   const firebase = useContext(FirebaseContext);
   const theme = useContext(ThemeContext);
+  const [paletteVisible, setPaletteVisible] = useState(false);
   const [noteColor, setNoteColor] = useState(
     props.selectedNote.color,
   );
@@ -65,6 +67,14 @@ const UpdateModal = (props) => {
     firebase.deleteNote(props.selectedNote.id, props.handleClose);
   }
 
+  function showPalette() {
+    setPaletteVisible(true);
+  }
+
+  function hidePalette() {
+    setPaletteVisible(false);
+  }
+
   return (
     <Modal
       aria-labelledby="transition-modal-title"
@@ -101,12 +111,25 @@ const UpdateModal = (props) => {
             placeholder="Note"
             ref={contentRef}
           ></textarea>
-          <div className={styles.panel}>
+          <div className={styles['panel']}>
             <button type="button" onClick={deleteNote}>
               <DeleteIcon />
             </button>
-            <button type="button">
-              <PaletteIcon changeNoteColor={setNoteColor} />
+            <button
+              type="button"
+              onClick={(e) => e.stopPropagation()}
+              className={styles['palette-button']}
+            >
+              <PaletteIcon
+                showPalette={showPalette}
+                hidePalette={hidePalette}
+              />
+              <Palette
+                changeNoteColor={setNoteColor}
+                paletteVisible={paletteVisible}
+                showPalette={showPalette}
+                hidePalette={hidePalette}
+              />
             </button>
             <button type="submit">Done</button>
           </div>
